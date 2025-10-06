@@ -7,7 +7,7 @@ spec:
     app: kubedemoapp
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
-      nodePort: 30080
+      port: 5000          # Service port inside cluster
+      targetPort: 5000    # App port in container
+      nodePort: 30080     # External access port on node
   type: NodePort
