@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kubedemoapp-deployment
+  labels:
+    app: kubedemoapp
 spec:
   replicas: 4
   selector:
@@ -14,6 +16,6 @@ spec:
     spec:
       containers:
         - name: kubedemoapp
-          image: bindusabavath/sample:kubeimage1
+          image: bindusabavath/sample:kubeimage1   # Your Docker Hub image
           ports:
             - containerPort: 5000
